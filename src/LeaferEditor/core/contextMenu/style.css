@@ -1,0 +1,106 @@
+.context-menu-container {
+  /* display: none; */
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.context-menu {
+  pointer-events: all;
+  width: 150px;
+  list-style: none;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #ccc;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /* overflow: hidden; */
+  visibility: hidden;
+  opacity: 0.95;
+}
+
+.context-menu-item {
+  padding: 6px 10px;
+  margin: 2px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 4px;
+  overflow: hidden;
+  opacity: 0.95;
+}
+
+.context-menu-item:hover {
+  /* background: #f4f4f4; */
+  background: rgba(64, 128, 255, 0.4);
+  opacity: 1;
+}
+
+.context-menu-item.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  /* pointer-events: none; */
+}
+
+.context-menu-item .context-menu-title {
+  flex: 2;
+  font-size: 12px;
+  color: #000;
+}
+
+.context-menu-item .context-menu-desc {
+  flex: 1;
+  font-size: 10px;
+  color: #999;
+}
+
+.context-menu-item .context-menu-title,
+.context-menu-item .context-menu-desc {
+  padding: 0;
+  margin: 0;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 子菜单容器样式 */
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  /* 默认隐藏 */
+  position: absolute;
+  left: 70%;
+  top: 5px;
+  width: 150px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* 展开子菜单的样式 */
+.submenu.show {
+  display: block;
+}
+
+/* 有子菜单的菜单项右侧箭头 */
+.has-children::after {
+  content: ">";
+  font-size: 12px;
+  color: #909399;
+  margin-left: 8px;
+}

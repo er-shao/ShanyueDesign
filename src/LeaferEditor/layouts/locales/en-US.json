@@ -1,0 +1,630 @@
+{
+  "sloganName": "Shanyue Design",
+  "footer": {
+    "contextMenu": {
+      "copy": "Copy",
+      "clear": "Clear",
+      "delete": "Delete",
+      "rename": "Rename",
+      "renameInputInfo": "Enter new name"
+    },
+    "copyright": "© 2021 Shanyue Design. All rights reserved.",
+    "cdn": "This website is powered by Shanyue Design CDN/cloud storage.",
+    "icp": "ICP License: 京ICP备 19003558号-1"
+  },
+  "header": {
+    "filePopover": {
+      "file": "File",
+      "insertImage": "Insert Image",
+      "importPSD": "Import PSD",
+      "importJSON": "Import JSON",
+      "appendJSON": "Import JSON (Append)",
+      "process": {
+        "importing": "Importing",
+        "parsing": "Parsing",
+        "converting": "Import completed",
+        "info-importing": "Parsing",
+        "info-parsing": "Imported"
+      }
+    },
+    "gridlines": {
+      "enable": "Enable edit grid lines",
+      "clear": "Clear grid lines",
+      "showOrHide": "Show/Hide grid lines",
+      "disable": "Disable edit grid lines"
+    },
+    "help": {
+      "shortcuts": "Shortcuts",
+      "about": "About",
+      "about-text": "Hotkeys and functions are not fully supported yet, will be improved gradually...",
+      "datas": {
+        "common": "General",
+        "copy": "Copy",
+        "cut": "Cut",
+        "paste": "Paste",
+        "allSelect": "Select All",
+        "undo": "Undo",
+        "redo": "Redo",
+        "delete": "Delete",
+        "escape": "Close/Cancel",
+        "canvas": "Canvas Operations",
+        "moveCanvas": "Move Canvas",
+        "moveCanvasInfo": "Space + Drag / Middle-click drag",
+        "zoomCanvas": "Zoom Canvas",
+        "zoomCanvasInfo": "Ctrl + Scroll / Middle-click scroll",
+        "item": "Element Operations",
+        "select": "Multi-select",
+        "selectInfo": "Hold Shift + Click",
+        "moveDown": "Move Down One Layer",
+        "moveUp": "Move Up One Layer",
+        "moveToBottom": "Move to Bottom",
+        "moveToTop": "Move to Top",
+        "group": "Group (multi-select)",
+        "ungroup": "Ungroup (select group)",
+        "lock-unlock": "Lock/Unlock",
+        "horizontalFlip": "Flip Horizontal",
+        "verticalFlip": "Flip Vertical",
+        "move": "Move Element",
+        "gridlines": "Ruler Line Operations",
+        "showOrHide": "Show/Hide",
+        "enableOrdisable": "Enable/Disable Ruler Line Editing",
+        "zoom": "Canvas Zoom",
+        "zoomIn": "Zoom In",
+        "zoomOut": "Zoom Out",
+        "percent100": "100%",
+        "percent50": "50%",
+        "zoomFit": "Fit to View",
+        "mode": "Editor Mode Switch",
+        "selectMode": "Switch to Select Mode",
+        "previewMode": "Switch to Preview Mode",
+        "pencilMode": "Switch to Pen Tool Mode"
+      }
+    },
+    "operation": {
+      "selectTool": "Select Tool",
+      "preview": "Move View",
+      "pencilTool": "Pen Tool"
+    },
+    "rulerUnit": {
+      "unit": "Ruler Unit",
+      "px": "px",
+      "cm": "cm",
+      "in": "in",
+      "mm": "mm",
+      "pt": "pt",
+      "pc": "pc"
+    },
+    "saveOper": {
+      "preview": "Preview",
+      "download": "Download",
+      "saveAsPng": "Save as PNG",
+      "contentSaveAsJSON": "Save Content as JSON",
+      "currentPageSaveAsJSON": "Save Current Page as JSON",
+      "downloadOption": "Download Options",
+      "exportType": "Export Type",
+      "quality": "Quality",
+      "scale": "Scale",
+      "scaleExtra": "Use for generating thumbnails",
+      "pixelRatio": "Pixel Ratio",
+      "pixelRatioExtra": "Export 2x, 3x images for HiDPI",
+      "pixelRatioPlaceholder": "Default 1x",
+      "pixelRatioUnit": "x",
+      "trim": "Trim Transparent Pixels",
+      "yes": "Yes",
+      "no": "No",
+      "export": "Export",
+      "currentPage": "Current Page",
+      "all": "All",
+      "normal": "Normal",
+      "saveAsJSON": "Saved as JSON",
+      "save": "Save"
+    },
+    "toolBar": {
+      "group": "Group",
+      "ungroup": "Ungroup"
+    },
+    "undoRedo": {
+      "undo": "Undo",
+      "noUndo": "Nothing to undo",
+      "noRedo": "Nothing to redo",
+      "redo": "Redo"
+    },
+    "zoom": {
+      "zoomIn": "Zoom In",
+      "zoomOut": "Zoom Out",
+      "percent100": "100%",
+      "percent200": "200%",
+      "percent50": "50%"
+    }
+  },
+  "panelLeft": {
+    "index": {
+      "downSide": "Collapse sidebar",
+      "add": "Add",
+      "template": "Templates",
+      "material": "Materials",
+      "image": "Images",
+      "robot": "AI"
+    },
+    "add": {
+      "gridlines": {
+        "direction": "Direction",
+        "horizontal": "Horizontal",
+        "vertical": "Vertical",
+        "position": "Position",
+        "confirm": "Confirm",
+        "addButton": "Add Grid Line",
+        "addSuccess": "Grid line added"
+      },
+      "divider": {
+        "referenceLine": "Reference Line",
+        "text": "Text",
+        "element": "Element",
+        "shape": "Shape",
+        "barcodeTool": "Barcode Tool"
+      },
+      "button": {
+        "newReferenceLine": "New Reference Line",
+        "addTitle": "Add Title",
+        "addBody": "Add Body",
+        "addParagraph": "Add Paragraph",
+        "line": "Line",
+        "arrow": "Arrow",
+        "rectangle": "Rectangle",
+        "circle": "Circle",
+        "ellipse": "Ellipse",
+        "polygon": "Polygon",
+        "star": "Star",
+        "barcode": "Barcode",
+        "qrcode": "QR Code"
+      },
+      "default": {
+        "titleText": "Shanyue Design - Double-click to edit",
+        "bodyText": "Shanyue Design - Double-click to edit",
+        "paragraphText": "Shanyue Design\nDouble-click to edit\nLorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quis, praesentium doloremque laborum saepe nostrum distinctio excepturi maiores expedita id commodi blanditiis inventore ullam, error dignissimos sapiente similique repellendus sequi!"
+      }
+    }
+  },
+  "panelRight": {
+    "index": {
+      "attribute": "Properties",
+      "layer": "Layers"
+    },
+    "attribute": {
+      "some": {
+        "swipeNumber": {
+          "xLabel": "X",
+          "yLabel": "Y",
+          "rxLabel": "RX",
+          "ryLabel": "RY"
+        },
+        "transform": {
+          "horizontalFlip": "Flip H",
+          "verticalFlip": "Flip V"
+        },
+        "group": {
+          "button": "Group",
+          "tooltip": "Group"
+        },
+        "layerAttr": {
+          "title": "Selected Layer"
+        }
+      },
+      "layer": {
+        "title": "Layer",
+        "blendMode": {
+          "default": "Normal",
+          "isolate": "Isolate",
+          "darken": {
+            "group": "Darken",
+            "darken": "Darken",
+            "multiply": "Multiply",
+            "colorBurn": "Color Burn"
+          },
+          "lighten": {
+            "group": "Lighten",
+            "lighten": "Lighten",
+            "screen": "Screen",
+            "colorDodge": "Color Dodge"
+          },
+          "contrast": {
+            "group": "Contrast",
+            "overlay": "Overlay",
+            "softLight": "Soft Light",
+            "hardLight": "Hard Light"
+          },
+          "comparison": {
+            "group": "Comparison",
+            "difference": "Difference",
+            "exclusion": "Exclusion"
+          },
+          "color": {
+            "group": "Color",
+            "hue": "Hue",
+            "saturation": "Saturation",
+            "color": "Color",
+            "luminosity": "Luminosity"
+          }
+        }
+      },
+      "alignment": {
+        "left": "Align Left",
+        "right": "Align Right",
+        "top": "Align Top",
+        "bottom": "Align Bottom",
+        "xcenter": "Align Vertical Center",
+        "ycenter": "Align Horizontal Center",
+        "xequation": "Distribute Horizontally",
+        "yequation": "Distribute Vertically"
+      },
+      "arrow": {
+        "title": "Arrow",
+        "startPlaceholder": "Start",
+        "endPlaceholder": "End",
+        "startPrefix": "Start",
+        "endPrefix": "End",
+        "options": {
+          "none": "None",
+          "angle": "Angle",
+          "angle-side": "Angle (one side)",
+          "arrow": "Arrow",
+          "triangle": "Triangle",
+          "triangle-flip": "Triangle (flipped)",
+          "circle": "Circle",
+          "circle-line": "Circle (line)",
+          "square": "Square",
+          "square-line": "Square (line)",
+          "diamond": "Diamond",
+          "diamond-line": "Diamond (line)",
+          "mark": "Mark"
+        }
+      },
+      "barcode": {
+        "panel": {
+          "contentTitle": "Barcode Content",
+          "settingsTitle": "Barcode Settings"
+        },
+        "textarea": {
+          "placeholder": "Enter content"
+        },
+        "format": {
+          "prefix": "Format"
+        },
+        "codeHeight": {
+          "label": "Code Height"
+        },
+        "margin": {
+          "label": "Margin"
+        },
+        "codeUnitWidth": {
+          "label": "Unit Width"
+        },
+        "fontSize": {
+          "label": "Font Size"
+        },
+        "textMargin": {
+          "label": "Text Margin"
+        },
+        "textAlign": {
+          "prefix": "Text Align",
+          "options": {
+            "left": "Left",
+            "center": "Center",
+            "right": "Right"
+          }
+        },
+        "textPosition": {
+          "prefix": "Text Position",
+          "options": {
+            "bottom": "Bottom",
+            "top": "Top"
+          }
+        },
+        "lineColor": {
+          "prefix": "Line Color"
+        },
+        "background": {
+          "prefix": "Background"
+        }
+      },
+      "canvas": {
+        "overflowHidden": "Clip content",
+        "button": {
+          "resizeCanvas": "Fit Canvas to Content"
+        },
+        "modal": {
+          "title": {
+            "resizeCanvas": "Fit Canvas to Content"
+          }
+        },
+        "label": {
+          "currentPageSize": "Current size:",
+          "modifiedSize": "New size:"
+        },
+        "background": "Background"
+      },
+      "draw": {
+        "title": "Brush",
+        "strokeWidth": "Brush Size",
+        "strokeColor": "Brush Color"
+      },
+      "ellipse": {
+        "title": "Ellipse",
+        "innerRadius": "Inner Radius",
+        "startAngle": "Start Angle",
+        "endAngle": "End Angle"
+      },
+      "fill": {
+        "title": "Fill"
+      },
+      "group": {
+        "title": "Group Items",
+        "tooltip": {
+          "visibility": "Visibility",
+          "visibilityDesc": "Show/hide this element",
+          "mask": "Mask",
+          "maskDesc": "When set as mask, the element itself is not rendered (except clip type), and upper elements in the group are affected by this mask.",
+          "eraser": "Eraser",
+          "eraserDesc": "When set as eraser, the element itself is not rendered, and lower elements in the group are erased by it.",
+          "note": "Note: Elements with mask enabled will serve as the base size of the group. To achieve multi-layer masking and clipping effects like Photoshop, use nested groups."
+        }
+      },
+      "ungroup": {
+        "title": "Ungroup"
+      },
+      "image": {
+        "title": "Replace Image",
+        "uploadButton": "Upload",
+        "uploadingTip": "Uploading...",
+        "errorImageSize": "Image size must not exceed {size}MB"
+      },
+      "layerName": {
+        "title": "Layer Name"
+      },
+      "line": {
+        "title": "Dash",
+        "setAsDash": "Set as dashed",
+        "length": "Length",
+        "gap": "Gap"
+      },
+      "polygon": {
+        "title": "Polygon",
+        "sides": "Sides",
+        "cornerRadius": "Radius"
+      },
+      "qrCode": {
+        "content": {
+          "title": "QR Content",
+          "placeholder": "Enter content"
+        },
+        "settings": {
+          "title": "QR Settings",
+          "errorCorrectionLevel": {
+            "prefix": "Error Correction",
+            "options": {
+              "L": "7%",
+              "M": "15%",
+              "Q": "25%",
+              "H": "30%"
+            }
+          },
+          "margin": {
+            "label": "Margin"
+          },
+          "darkColor": {
+            "prefix": "Dark Color"
+          },
+          "lightColor": {
+            "prefix": "Light Color"
+          }
+        }
+      },
+      "cornerRadius": {
+        "title": "Corner Radius",
+        "labels": {
+          "lt": "LT",
+          "rt": "RT",
+          "lb": "LB",
+          "rb": "RB"
+        }
+      },
+      "shadow": {
+        "switch": {
+          "checked": "Show",
+          "unchecked": "Hide"
+        },
+        "outer": {
+          "title": "Drop Shadow",
+          "xOffset": "Offset X",
+          "yOffset": "Offset Y",
+          "blurRadius": "Blur",
+          "spread": "Spread",
+          "color": "Color",
+          "showOnlyOutside": "Show only outside"
+        },
+        "inner": {
+          "title": "Inner Shadow",
+          "xOffset": "Offset X",
+          "yOffset": "Offset Y",
+          "blurRadius": "Blur",
+          "spread": "Spread",
+          "color": "Color"
+        }
+      },
+      "star": {
+        "title": "Star",
+        "corners": "Points",
+        "cornerRadius": "Corner Radius",
+        "innerRadius": "Inner Radius"
+      },
+      "stroke": {
+        "title": "Stroke",
+        "widthLabel": "W",
+        "joinPrefix": "Join",
+        "alignPrefix": "Align",
+        "capPrefix": "Cap",
+        "alignOptions": {
+          "inside": "Inside",
+          "center": "Center",
+          "outside": "Outside"
+        },
+        "joinOptions": {
+          "miter": "Miter",
+          "bevel": "Bevel",
+          "round": "Round"
+        },
+        "capOptions": {
+          "none": "None",
+          "round": "Round",
+          "square": "Square"
+        }
+      },
+      "text": {
+        "content": {
+          "title": "Text Content",
+          "placeholder": "Enter text"
+        },
+        "properties": {
+          "title": "Text Properties",
+          "resizeFontSize": "Adjust font size via text box",
+          "fontFamily": {
+            "prefix": "Font",
+            "placeholder": "Select font"
+          },
+          "fontWeight": {
+            "prefix": "Weight",
+            "placeholder": "Select weight"
+          },
+          "fontSize": "Size",
+          "lineHeight": "Line Height",
+          "letterSpacing": "Letter Spacing",
+          "textWrap": {
+            "prefix": "Wrap",
+            "placeholder": "Select wrap rule",
+            "normal": "Auto wrap",
+            "none": "No wrap",
+            "break": "Break word"
+          },
+          "italic": "Italic",
+          "textDecoration": {
+            "none": "None",
+            "underline": "Underline",
+            "strikethrough": "Strikethrough",
+            "both": "Underline + Strikethrough"
+          },
+          "textAlign": {
+            "left": "Left",
+            "center": "Center",
+            "right": "Right",
+            "justify": "Justify"
+          },
+          "verticalAlign": {
+            "top": "Top",
+            "middle": "Middle",
+            "bottom": "Bottom"
+          },
+          "textOverflow": {
+            "show": "Show overflow",
+            "hide": "Hide overflow",
+            "custom": "Custom",
+            "popoverTitle": "Overflow"
+          }
+        },
+        "padding": {
+          "title": "Text Padding"
+        },
+        "weight": {
+          "thin": "Thin",
+          "extraLight": "Extra Light",
+          "light": "Light",
+          "normal": "Normal",
+          "medium": "Medium",
+          "semiBold": "Semi Bold",
+          "bold": "Bold",
+          "extraBold": "Extra Bold",
+          "black": "Black"
+        },
+        "font": {
+          "loading": "Loading font 【{fontName}】",
+          "loadSuccess": "Font loaded",
+          "loadFailed": "Failed to load 【{fontName}】: {error}"
+        }
+      }
+    },
+    "infiniteScroll": {
+      "noMore": "No more"
+    },
+    "material": {
+      "saveAs": {
+        "modalTitle": "Save as Material",
+        "saveAsMaterial": "Save as Material",
+        "form": {
+          "title": "Title",
+          "titleExtra": "Used for layer name",
+          "recordPosition": "Record position",
+          "category": "Category",
+          "cover": "Cover",
+          "switchYes": "Yes",
+          "switchNo": "No"
+        }
+      }
+    },
+    "layer": {
+      "contextMenu": {
+        "createClippingMask": "Create Clipping Mask",
+        "cancelClippingMask": "Release Clipping Mask",
+        "rename": "Rename",
+        "duplicate": "Duplicate",
+        "delete": "Delete",
+        "show": "Show",
+        "hide": "Hide",
+        "lock": "Lock",
+        "unlock": "Unlock"
+      },
+      "defaultName": "unnamed_{tag}_{id}"
+    }
+  },
+  "components": {
+    "search": {
+      "placeholder": "Search keywords"
+    },
+    "upload": {
+      "reupload": "Re-upload",
+      "delete": "Delete",
+      "error": {
+        "sizeExceed": "Image size must not exceed {size}MB",
+        "uploadFailed": "Upload failed"
+      }
+    },
+    "fillPicker": {
+      "gradient": {
+        "typeLabels": {
+          "solid": "Solid",
+          "linear": "Linear",
+          "radial": "Radial",
+          "image": "Pattern"
+        }
+      },
+      "fillType": {
+        "solid": "Solid",
+        "linear": "Linear Gradient",
+        "radial": "Radial Gradient",
+        "image": "Pattern Fill"
+      },
+      "panel": {
+        "degree": "Angle",
+        "imageSelector": {
+          "fillMode": "Fill Mode",
+          "opacity": "Opacity",
+          "options": {
+            "cover": "Cover",
+            "fit": "Fit",
+            "stretch": "Stretch",
+            "clip": "Clip",
+            "repeat": "Repeat"
+          }
+        }
+      }
+    }
+  }
+}

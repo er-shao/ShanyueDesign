@@ -1,0 +1,55 @@
+{
+    "copy": "复制",
+    "cut": "剪切",
+    "paste": "粘贴",
+    "paste-to-current-position": "粘贴到当前位置",
+
+    "select-all": "全选",
+
+    "zoom-management": "缩放管理",
+    "zoom-out": "缩小",
+    "zoom-in": "放大",
+    "zoom-fit":"适应画布",
+    "zoom-100": "缩放 100%",
+
+    "show-or-hide-grid":"显示/隐藏网格线",
+
+    "z-index-adjustment":"层级调整",
+    "z-index-up":"向上调整一层",
+    "z-index-down":"向下调整一层",
+    "z-index-top": "置顶",
+    "z-index-bottom": "置底",
+
+    "add": "添加",
+    "add-rect": "矩形",
+    "add-polygon": "多边形",
+    "add-star": "星形",
+    "add-ellipse": "圆形",
+    "add-rect-rect": "矩形",
+    "add-rect-round": "圆角矩形",
+    "add-polygon-triangle": "三角形",
+    "add-polygon-pentagon": "五边形",
+    "add-polygon-roundedPentagon": "圆角六边形",
+    "add-star-threeStar": "三棱锥星",
+    "add-star-pentagram": "五角星",
+    "add-star-roundedStar": "圆角星形",
+    "add-ellipse-ellipse": "圆形",
+    "add-ellipse-ring": "圆环",
+    "add-ellipse-sector": "扇形",
+    "add-ellipse-ellipse2": "椭圆",
+
+    "add-image": "添加图片",
+    "add-text": "添加文字",
+
+    "operate" : "操作",
+    "operate-fit-to-canvas": "缩放到画布大小",
+    "lock": "锁定",
+    "unlock": "解锁",
+    "rename": "重命名",
+
+    "group": "编组",
+    "ungroup": "取消编组",
+    "remove": "移除",
+
+    "export-png": "导出PNG"
+}

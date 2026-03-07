@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true, // 开启装饰器功能
+    "emitDecoratorMetadata": true,
+    // "strictPropertyInitialization": false, // 关闭严格属性初始化检查
+    "target": "ES2016",
+    "module": "ESNext",
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
+}

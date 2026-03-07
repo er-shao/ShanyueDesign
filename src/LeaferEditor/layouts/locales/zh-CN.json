@@ -1,0 +1,630 @@
+{
+  "sloganName": "山月设计",
+  "footer": {
+    "contextMenu": {
+      "copy": "复制",
+      "clear": "清空",
+      "delete": "删除",
+      "rename": "重命名",
+      "renameInputInfo": "请输入新名称"
+    },
+    "copyright": "版权所有 © 山月设计 2021",
+    "cdn": "本网站由 山月设计 提供CDN加速/云存储服务",
+    "icp": "备案号：京ICP备 19003558号-1"
+  },
+  "header": {
+    "filePopover": {
+      "file": "文件",
+      "insertImage": "插入图片",
+      "importPSD": "导入PSD",
+      "importJSON": "导入JSON",
+      "appendJSON": "导入JSON(追加)",
+      "process": {
+        "importing": "正在导入",
+        "parsing": "正在解析",
+        "converting": "导入完成",
+        "info-importing": "解析中",
+        "info-parsing": "已导入"
+      }
+    },
+    "gridlines": {
+      "enable": "开启编辑网格线",
+      "clear": "清除网格线",
+      "showOrHide": "显示/隐藏网格线",
+      "disable": "关闭编辑网格线"
+    },
+    "help": {
+      "shortcuts": "快捷键",
+      "about": "说明",
+      "about-text": "热键及热键功能目前尚未全部支持，后续会逐个完善...",
+      "datas": {
+        "common": "通用",
+        "copy": "复制",
+        "cut": "剪切",
+        "paste": "粘贴",
+        "allSelect": "全选",
+        "undo": "撤销",
+        "redo": "恢复",
+        "delete": "删除",
+        "escape": "关闭、取消",
+        "canvas": "画布操作",
+        "moveCanvas": "移动画布",
+        "moveCanvasInfo": "Space + 鼠标拖拽 / 鼠标中键拖拽",
+        "zoomCanvas": "缩放画布",
+        "zoomCanvasInfo": "Ctrl + 鼠标滚轮 / 鼠标中键滚动",
+        "item": "元素操作",
+        "select": "多选",
+        "selectInfo": "按住Shift + 鼠标左键",
+        "moveDown": "向下移动一层",
+        "moveUp": "向上移动一层",
+        "moveToBottom": "移动到底层",
+        "moveToTop": "移动到顶层",
+        "group": "创建分组(多选)",
+        "ungroup": "解除分组(选择组)",
+        "lock-unlock": "锁定/解锁",
+        "horizontalFlip": "水平翻转",
+        "verticalFlip": "垂直翻转",
+        "move": "移动元素",
+        "gridlines": "标尺线操作",
+        "showOrHide": "显示/隐藏",
+        "enableOrdisable": "开启/关闭标尺线编辑",
+        "zoom": "画布缩放",
+        "zoomIn": "放大",
+        "zoomOut": "缩小",
+        "percent100": "100%",
+        "percent50": "50%",
+        "zoomFit": "缩放到视图大小%",
+        "mode": "编辑器模式切换",
+        "selectMode": "切换为选择模式",
+        "previewMode": "切换为预览模式",
+        "pencilMode": "切换钢笔尺模式"
+      }
+    },
+    "operation": {
+      "selectTool": "选择工具",
+      "preview": "移动视图",
+      "pencilTool": "钢笔工具"
+    },
+    "rulerUnit": {
+      "unit": "标尺单位",
+      "px": "像素",
+      "cm": "厘米",
+      "in": "英寸",
+      "mm": "毫米",
+      "pt": "点",
+      "pc": "派卡"
+    },
+    "saveOper": {
+      "preview": "预览",
+      "download": "下载作品",
+      "saveAsPng": "保存为PNG",
+      "contentSaveAsJSON": "内容保存为JSON",
+      "currentPageSaveAsJSON": "当前页保存为JSON",
+      "downloadOption": "下载作品选项",
+      "exportType": "导出文件类型",
+      "quality": "图片质量",
+      "scale": "缩放比例",
+      "scaleExtra": "可用于生成小尺寸的缩略图",
+      "pixelRatio": "像素比",
+      "pixelRatioExtra": "可导出适配高清屏的2倍图、3倍图",
+      "pixelRatioPlaceholder": "默认为1倍图",
+      "pixelRatioUnit": "倍",
+      "trim": "裁剪透明像素",
+      "yes": "是",
+      "no": "否",
+      "export": "导出",
+      "currentPage": "当前页",
+      "all": "全部",
+      "normal": "正常",
+      "saveAsJSON": "已保存为 JSON",
+      "save": "保存"
+    },
+    "toolBar": {
+      "group": "创建分组",
+      "ungroup": "解除分组"
+    },
+    "undoRedo": {
+      "undo": "撤销",
+      "noUndo": "无可撤销",
+      "noRedo": "无可恢复",
+      "redo": "恢复"
+    },
+    "zoom": {
+      "zoomIn": "放大",
+      "zoomOut": "缩小",
+      "percent100": "100%",
+      "percent200": "200%",
+      "percent50": "50%"
+    }
+  },
+  "panelLeft": {
+    "index": {
+      "downSide": "收起侧边栏",
+      "add": "添加",
+      "template": "模板",
+      "material": "素材",
+      "image": "图片",
+      "robot": "AI"
+    },
+    "add": {
+      "gridlines": {
+        "direction": "方向",
+        "horizontal": "水平",
+        "vertical": "垂直",
+        "position": "位置",
+        "confirm": "确认",
+        "addButton": "添加网格线",
+        "addSuccess": "添加网格线成功"
+      },
+      "divider": {
+        "referenceLine": "参考线",
+        "text": "文字",
+        "element": "元素",
+        "shape": "形状",
+        "barcodeTool": "条码工具"
+      },
+      "button": {
+        "newReferenceLine": "新建参考线",
+        "addTitle": "添加标题",
+        "addBody": "添加正文",
+        "addParagraph": "添加段落",
+        "line": "线条",
+        "arrow": "箭头",
+        "rectangle": "矩形",
+        "circle": "圆形",
+        "ellipse": "圆环",
+        "polygon": "多边形",
+        "star": "星形",
+        "barcode": "条形码",
+        "qrcode": "二维码"
+      },
+      "default": {
+        "titleText": "山月设计-双击编辑",
+        "bodyText": "山月设计-双击编辑",
+        "paragraphText": "山月设计\n双击编辑\nLorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quis, praesentium doloremque laborum saepe nostrum distinctio excepturi maiores expedita id commodi blanditiis inventore ullam, error dignissimos sapiente similique repellendus sequi!"
+      }
+    }
+  },
+  "panelRight": {
+    "index": {
+      "attribute": "属性",
+      "layer": "图层"
+    },
+    "attribute": {
+      "some": {
+        "swipeNumber": {
+          "xLabel": "X",
+          "yLabel": "Y",
+          "rxLabel": "RX",
+          "ryLabel": "RY"
+        },
+        "transform": {
+          "horizontalFlip": "水平翻转",
+          "verticalFlip": "垂直翻转"
+        },
+        "group": {
+          "button": "编组",
+          "tooltip": "编组"
+        },
+        "layerAttr": {
+          "title": "选中图层"
+        }
+      },
+      "layer": {
+        "title": "图层",
+        "blendMode": {
+          "default": "默认",
+          "isolate": "隔离",
+          "darken": {
+            "group": "暗色",
+            "darken": "变暗",
+            "multiply": "正片叠底",
+            "colorBurn": "颜色加深"
+          },
+          "lighten": {
+            "group": "亮色",
+            "lighten": "变亮",
+            "screen": "滤色",
+            "colorDodge": "颜色减淡"
+          },
+          "contrast": {
+            "group": "对比",
+            "overlay": "叠加",
+            "softLight": "柔光",
+            "hardLight": "强光"
+          },
+          "comparison": {
+            "group": "比较",
+            "difference": "差集",
+            "exclusion": "排除"
+          },
+          "color": {
+            "group": "颜色",
+            "hue": "色相",
+            "saturation": "饱和度",
+            "color": "颜色",
+            "luminosity": "明度"
+          }
+        }
+      },
+      "alignment": {
+        "left": "左对齐",
+        "right": "右对齐",
+        "top": "顶部对齐",
+        "bottom": "底部对齐",
+        "xcenter": "垂直居中",
+        "ycenter": "水平居中",
+        "xequation": "水平平均对齐",
+        "yequation": "垂直平均对齐"
+      },
+      "arrow": {
+        "title": "箭头属性",
+        "startPlaceholder": "开始箭头",
+        "endPlaceholder": "结束箭头",
+        "startPrefix": "开始箭头",
+        "endPrefix": "结束箭头",
+        "options": {
+          "none": "无",
+          "angle": "角度箭头",
+          "angle-side": "单边角度箭头",
+          "arrow": "标准箭头",
+          "triangle": "三角形箭头",
+          "triangle-flip": "反向三角形箭头",
+          "circle": "圆形箭头",
+          "circle-line": "圆形箭头（线性）",
+          "square": "方形箭头",
+          "square-line": "方形箭头（线性）",
+          "diamond": "菱形箭头",
+          "diamond-line": "菱形箭头（线性）",
+          "mark": "标注箭头"
+        }
+      },
+      "barcode": {
+        "panel": {
+          "contentTitle": "条码内容",
+          "settingsTitle": "条码设置"
+        },
+        "textarea": {
+          "placeholder": "请输入一些内容"
+        },
+        "format": {
+          "prefix": "编码格式"
+        },
+        "codeHeight": {
+          "label": "码高度"
+        },
+        "margin": {
+          "label": "码边距"
+        },
+        "codeUnitWidth": {
+          "label": "条码单线间隔"
+        },
+        "fontSize": {
+          "label": "文字大小"
+        },
+        "textMargin": {
+          "label": "文字边距"
+        },
+        "textAlign": {
+          "prefix": "文字对齐方式",
+          "options": {
+            "left": "左对齐",
+            "center": "居中对齐",
+            "right": "右对齐"
+          }
+        },
+        "textPosition": {
+          "prefix": "文字位置",
+          "options": {
+            "bottom": "底部",
+            "top": "顶部"
+          }
+        },
+        "lineColor": {
+          "prefix": "码颜色"
+        },
+        "background": {
+          "prefix": "背景色"
+        }
+      },
+      "canvas": {
+        "overflowHidden": "超出画布隐藏",
+        "button": {
+          "resizeCanvas": "画布尺寸自适应内容"
+        },
+        "modal": {
+          "title": {
+            "resizeCanvas": "画布尺寸自适应内容"
+          }
+        },
+        "label": {
+          "currentPageSize": "当前页面尺寸：",
+          "modifiedSize": "修改后尺寸："
+        },
+        "background": "背景"
+      },
+      "draw": {
+        "title": "画笔设置",
+        "strokeWidth": "画笔粗细",
+        "strokeColor": "画笔颜色"
+      },
+      "ellipse": {
+        "title": "圆形属性",
+        "innerRadius": "内圆半径",
+        "startAngle": "开始角度",
+        "endAngle": "结束角度"
+      },
+      "fill": {
+        "title": "填充"
+      },
+      "group": {
+        "title": "组内元素",
+        "tooltip": {
+          "visibility": "显隐",
+          "visibilityDesc": "显示或隐藏此元素",
+          "mask": "遮罩",
+          "maskDesc": "元素设为遮罩后，自身不渲染（裁剪类型除外），所在组内的上层元素受此遮罩影响。",
+          "eraser": "擦除",
+          "eraserDesc": "元素设为橡皮擦后，自身不渲染，所在组内的下层元素会被它擦除。",
+          "note": "注意：启用遮罩功能的元素将作为组的基准宽高，如需实现ps的多层蒙版和裁剪效果 请使用多个组嵌套实现"
+        }
+      },
+      "ungroup": {
+        "title": "取消编组"
+      },
+      "image": {
+        "title": "替换图片",
+        "uploadButton": "上传",
+        "uploadingTip": "上传中...",
+        "errorImageSize": "图片大小不能超过{size}MB"
+      },
+      "layerName": {
+        "title": "图层名称"
+      },
+      "line": {
+        "title": "虚线",
+        "setAsDash": "设置为虚线",
+        "length": "长度",
+        "gap": "间隔"
+      },
+      "polygon": {
+        "title": "多边形属性",
+        "sides": "边数",
+        "cornerRadius": "圆角"
+      },
+      "qrCode": {
+        "content": {
+          "title": "二维码内容",
+          "placeholder": "请输入一些内容"
+        },
+        "settings": {
+          "title": "二维码设置",
+          "errorCorrectionLevel": {
+            "prefix": "容错率",
+            "options": {
+              "L": "7%",
+              "M": "15% ",
+              "Q": "25%",
+              "H": "30%"
+            }
+          },
+          "margin": {
+            "label": "码边距"
+          },
+          "darkColor": {
+            "prefix": "码颜色"
+          },
+          "lightColor": {
+            "prefix": "码背景色"
+          }
+        }
+      },
+      "cornerRadius": {
+        "title": "圆角",
+        "labels": {
+          "lt": "LT",
+          "rt": "RT",
+          "lb": "LB",
+          "rb": "RB"
+        }
+      },
+      "shadow": {
+        "switch": {
+          "checked": "显示",
+          "unchecked": "隐藏"
+        },
+        "outer": {
+          "title": "外阴影",
+          "xOffset": "X偏移量",
+          "yOffset": "Y偏移量",
+          "blurRadius": "模糊半径",
+          "spread": "阴影距离",
+          "color": "阴影颜色",
+          "showOnlyOutside": "只显示图形外部的阴影"
+        },
+        "inner": {
+          "title": "内阴影",
+          "xOffset": "X偏移量",
+          "yOffset": "Y偏移量",
+          "blurRadius": "模糊半径",
+          "spread": "阴影距离",
+          "color": "阴影颜色"
+        }
+      },
+      "star": {
+        "title": "星形属性",
+        "corners": "边角",
+        "cornerRadius": "圆角",
+        "innerRadius": "内角"
+      },
+      "stroke": {
+        "title": "描边",
+        "widthLabel": "宽",
+        "joinPrefix": "拐角",
+        "alignPrefix": "对齐",
+        "capPrefix": "端点",
+        "alignOptions": {
+          "inside": "内部",
+          "center": "居中",
+          "outside": "外部"
+        },
+        "joinOptions": {
+          "miter": "直角",
+          "bevel": "平角",
+          "round": "圆角"
+        },
+        "capOptions": {
+          "none": "无",
+          "round": "圆形",
+          "square": "方形"
+        }
+      },
+      "text": {
+        "content": {
+          "title": "文本内容",
+          "placeholder": "请输入一些内容"
+        },
+        "properties": {
+          "title": "文本属性",
+          "resizeFontSize": "通过文本框修改字体大小",
+          "fontFamily": {
+            "prefix": "字体",
+            "placeholder": "选择文字字体"
+          },
+          "fontWeight": {
+            "prefix": "粗细",
+            "placeholder": "选择文字粗细"
+          },
+          "fontSize": "大小",
+          "lineHeight": "行距",
+          "letterSpacing": "字距",
+          "textWrap": {
+            "prefix": "换行规则",
+            "placeholder": "选择文本换行规则",
+            "normal": "换行点自动换行",
+            "none": "强制不换行",
+            "break": "可断开word换行"
+          },
+          "italic": "斜体",
+          "textDecoration": {
+            "none": "无划线",
+            "underline": "下划线",
+            "strikethrough": "删除线",
+            "both": "下划线+删除线"
+          },
+          "textAlign": {
+            "left": "左对齐",
+            "center": "居中对齐",
+            "right": "右对齐",
+            "justify": "两端对齐"
+          },
+          "verticalAlign": {
+            "top": "顶部对齐",
+            "middle": "垂直居中对齐",
+            "bottom": "底部对齐"
+          },
+          "textOverflow": {
+            "show": "超出显示",
+            "hide": "超出隐藏",
+            "custom": "自定义",
+            "popoverTitle": "超出显示"
+          }
+        },
+        "padding": {
+          "title": "文本内边距"
+        },
+        "weight": {
+          "thin": "极细",
+          "extraLight": "特细",
+          "light": "细",
+          "normal": "正常",
+          "medium": "中等",
+          "semiBold": "半粗",
+          "bold": "粗",
+          "extraBold": "特粗",
+          "black": "极粗"
+        },
+        "font": {
+          "loading": "正在加载字体 【{fontName}】",
+          "loadSuccess": "字体加载成功",
+          "loadFailed": "加载字体【{fontName}】失败 {error}"
+        }
+      }
+    },
+    "infiniteScroll": {
+      "noMore": "没有更多了"
+    },
+    "material": {
+      "saveAs": {
+        "modalTitle": "保存素材选项",
+        "saveAsMaterial": "保存为素材",
+        "form": {
+          "title": "标题",
+          "titleExtra": "用于图层名称",
+          "recordPosition": "记录当前位置",
+          "category": "分类",
+          "cover": "封面",
+          "switchYes": "是",
+          "switchNo": "否"
+        }
+      }
+    },
+    "layer": {
+      "contextMenu": {
+        "createClippingMask": "创建裁剪遮罩",
+        "cancelClippingMask": "取消裁剪遮罩",
+        "rename": "重命名",
+        "duplicate": "复制",
+        "delete": "删除",
+        "show": "显示",
+        "hide": "隐藏",
+        "lock": "锁定",
+        "unlock": "解锁"
+      },
+      "defaultName": "unnamed_{tag}_{id}"
+    }
+  },
+  "components": {
+    "search": {
+      "placeholder": "输入关键词搜索"
+    },
+    "upload": {
+      "reupload": "重新上传",
+      "delete": "删除",
+      "error": {
+        "sizeExceed": "图片大小不能超过 {size}MB",
+        "uploadFailed": "上传失败"
+      }
+    },
+    "fillPicker": {
+      "gradient": {
+        "typeLabels": {
+          "solid": "纯色",
+          "linear": "线性",
+          "radial": "径向",
+          "image": "图案"
+        }
+      },
+      "fillType": {
+        "solid": "实色",
+        "linear": "线性渐变",
+        "radial": "径向渐变",
+        "image": "图案填充"
+      },
+      "panel": {
+        "degree": "角度",
+        "imageSelector": {
+          "fillMode": "填充模式",
+          "opacity": "透明度",
+          "options": {
+            "cover": "覆盖",
+            "fit": "适应",
+            "stretch": "拉伸",
+            "clip": "裁剪",
+            "repeat": "平铺"
+          }
+        }
+      }
+    }
+  }
+}

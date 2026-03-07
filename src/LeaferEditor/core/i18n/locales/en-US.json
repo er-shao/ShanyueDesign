@@ -1,0 +1,57 @@
+{
+    "copy": "Copy",
+    "cut": "Cut",
+    "paste": "Paste",
+    "paste-to-current-position": "Paste to Current Position",
+
+    "select-all": "Select All",
+
+    "zoom-management": "Zoom Management",
+    "zoom-out": "Zoom Out",
+    "zoom-in": "Zoom In",
+    "zoom-fit": "Fit to Canvas",
+    "zoom-100": "Zoom 100%",
+
+    "show-or-hide-grid": "Show/Hide Guidelines",
+
+    "z-index-adjustment": "Z-Index Adjustment",
+    "z-index-up": "Bring Forward",
+    "z-index-down": "Send Backward",
+    "z-index-top": "Bring to Front",
+    "z-index-bottom": "Send to Back",
+    
+    "add": "Add",
+    "add-rect": "Rectangle",
+    "add-polygon": "Polygon",
+    "add-star": "Star",
+    "add-ellipse": "Ellipse",
+    "add-rect-rect": "Rectangle",
+    "add-rect-round": "Rounded Rectangle",
+    "add-polygon-triangle": "Triangle",
+    "add-polygon-pentagon": "Pentagon",
+    "add-polygon-roundedPentagon": "Rounded Hexagon",
+    "add-star-threeStar": "Three-Pointed Star",
+    "add-star-pentagram": "Pentagram",
+    "add-star-roundedStar": "Rounded Star",
+    "add-ellipse-ellipse": "Circle",
+    "add-ellipse-ring": "Ring",
+    "add-ellipse-sector": "Sector",
+    "add-ellipse-ellipse2": "Ellipse",
+
+    "add-image": "Add Image",
+    "add-text": "Add Text",
+
+    "operate" : "Operate",
+    "operate-fit-to-canvas": "Fit to Canvas",
+    "lock": "Lock",
+    "unlock": "Unlock",
+    "rename": "Rename",
+
+
+    "group": "Group",
+    "ungroup": "Ungroup",
+    "remove": "Remove",
+
+    "export-png": "Export as PNG"
+
+}
