@@ -115,6 +115,7 @@ npm run dev
 ## 捐赠
 
 如果觉得还不错，请作者喝杯咖啡吧
+
 <img src="/public/mm_facetoface_collect_qrcode_1772902716395.png" alt="wx" style="width:40%;" />
 
 ## 致谢
