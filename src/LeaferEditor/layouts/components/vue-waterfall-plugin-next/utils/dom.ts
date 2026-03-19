@@ -40,6 +40,7 @@ const vendor = (() => {
 
   for (const key in transformNames) {
     const val = transformNames[key]
+    // @ts-ignore
     if (elementStyle[val] !== undefined)
       return key
   }

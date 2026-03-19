@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
  * @Author: Yaowen Liu
  * @Date: 2022-03-08 15:04:02

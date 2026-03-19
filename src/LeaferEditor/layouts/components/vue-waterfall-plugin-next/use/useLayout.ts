@@ -31,7 +31,7 @@ export function useLayout(
   // 获取对应y下标的x的值
   const getX = (index: number): number => {
     const count = props.hasAroundGutter ? index + 1 : index
-    return props.gutter * count + colWidth.value * index + offsetX.value
+    return props.gutter * count + (colWidth.value || 0) * index + (offsetX.value || 0)
   }
 
   // 初始y
@@ -56,6 +56,7 @@ export function useLayout(
   // 🧩 主逻辑：带 isFix 参数
   const layoutHandle = async(isFix = false): Promise<boolean> => {
     if (!waterfallWrapper.value) return false
+    if (cols.value <= 0) return false
 
     // 初始化每列的 y 值
     initY()
@@ -79,16 +80,21 @@ export function useLayout(
     // 计算布局写入任务
     const writes: Array<() => void> = []
     for (let i = 0; i < items.length; i++) {
-      const yIndex = horizontalOrder
+       let yIndex = horizontalOrder
         ? i % cols.value
         : findIndexWithinHeightDifference(posY.value, heightDifference)
-      const minY = posY.value[yIndex]
+      if (yIndex === -1) {
+        // 如果找不到符合条件的列，使用最小值的列
+        const minVal = Math.min(...posY.value)
+        yIndex = posY.value.indexOf(minVal)
+      }
+       const minY = posY.value[yIndex]!
       const curX = getX(yIndex)
-      const h = heights[i]
-      const curItem = items[i]
+       const h = heights[i]!
+       const curItem = items[i]!
 
-      writes.push(() => {
-        const style = curItem.style as CssStyleObject
+       writes.push(() => {
+        const style = curItem!.style as CssStyleObject
         if (transform)
           style[transform] = `translate3d(${Math.floor(curX)}px,${Math.floor(minY)}px,0)`
         style.width = `${colWidth.value}px`
@@ -96,15 +102,15 @@ export function useLayout(
 
         // 🟢 非修正布局时添加入场动画
         if (!isFix && !props.animationCancel)
-          addEnterAnimation(curItem)
+          addEnterAnimation(curItem!)
       })
 
-      const curSpace = props.space || props.gutter
-      posY.value[yIndex] += h + curSpace
+       const curSpace = props.space || props.gutter
+       posY.value[yIndex] = posY.value[yIndex]! + h + curSpace
     }
 
-    // 更新容器高度
-    wrapperHeight.value = Math.max(...posY.value)
+     // 更新容器高度
+    wrapperHeight.value = posY.value.length > 0 ? Math.max(...posY.value) : 0
 
     // 🟢 如果是修正模式：直接同步执行写入，不再延迟或动画
     if (isFix) {
@@ -142,7 +148,8 @@ function findIndexWithinHeightDifference(arr: number[], heightDifference: number
   const upperLimit = minValue + heightDifference
   let resultIndex = -1
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] >= minValue && arr[i] <= upperLimit) {
+     // @ts-ignore
+     if (arr[i] >= minValue && arr[i] <= upperLimit) {
       resultIndex = i
       break
     }

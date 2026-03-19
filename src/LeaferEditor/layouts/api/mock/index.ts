@@ -9,9 +9,9 @@ import {
     uploadMaterialURL,
 } from "../url";
 
-import templateData from "./data/templateData.json";
-import imageData from "./data/imageData.json";
-import elementData from "./data/elementData.json";
+// import templateData from "./data/templateData.json";
+// import imageData from "./data/imageData.json";
+// import elementData from "./data/elementData.json";
 import fontsData from "./data/fonts.json";
 
 const mock = new MockAdapter(axios);
@@ -23,13 +23,19 @@ export const successResponseWrap = (data: any) => {
     };
 };
 
-mock.onGet(templateListURL).reply(() => {
-    return [200, successResponseWrap(templateData.list)];
+mock.onGet(templateListURL).reply(async () => {
+    const templateData =  import("./data/templateData.json");
+    const data = await templateData;
+    return [200, successResponseWrap(data)];
 });
-mock
-    .onGet(imageMaterialListURL)
-    .reply(200, successResponseWrap(imageData.list));
-mock.onGet(materialURL).reply(200, successResponseWrap(elementData.list));
+mock.onGet(imageMaterialListURL).reply(async ()=>{
+    const imageData = await import("./data/imageData.json");
+    return [200, successResponseWrap(imageData.list)]
+    });
+mock.onGet(materialURL).reply(async () => {
+    const elementData = await import("./data/elementData.json");
+    return [200, successResponseWrap(elementData.list)];
+});
 mock.onGet(fontListURL).reply(200, successResponseWrap(fontsData.list));
 
 mock.onPost(uploadURL).reply(200, successResponseWrap({}));

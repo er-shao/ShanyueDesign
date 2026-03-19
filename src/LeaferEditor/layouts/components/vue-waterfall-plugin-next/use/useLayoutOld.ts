@@ -85,6 +85,7 @@ export function useLayout(
         const style = curItem.style as CssStyleObject
 
         // 设置偏移
+        // @ts-ignore
         if (transform) style[transform] = `translate3d(${Math.floor(curX)}px,${Math.floor(minY)}px, 0)`
         style.width = `${colWidth.value}px`
 
@@ -94,6 +95,7 @@ export function useLayout(
         // 更新当前index的y值
         const { height } = curItem.getBoundingClientRect()
         const curSpace = props.space || props.gutter
+        // @ts-ignore
         posY.value[yIndex] += height + curSpace
 
         // 添加入场动画
@@ -130,6 +132,7 @@ function findIndexWithinHeightDifference(arr: number[], heightDifference: number
   let resultIndex = -1
 
   for (let i = 0; i < arr.length; i++) {
+    // @ts-ignore
     if (arr[i] >= minValue && arr[i] <= upperLimit) {
       resultIndex = i
       break // 找到第一个符合范围的直接返回

@@ -49,7 +49,15 @@ const editor = useLeaferEditor();
 const pagesData = ref<PageData[]>([]);
 const currentPageID = ref(editor.currentPageID)
 
-
+const thumbnail = () => {
+    editor.app.tree.export('png').then((data) => {
+        const img = new Image();
+        img.onload = () => {
+            document.body.appendChild(img);
+        }
+        img.src = data.data;
+    });
+}
 const updatePagesData = () => {
     const pagesCanvas = editor.pages()
     const value = []
@@ -58,7 +66,9 @@ const updatePagesData = () => {
         const data: PageData = {
             index: n,
             name: page.name,
-            cover: page?.metaData?.cover || page.thumbnailDataURL || '',
+            cover: page?.metaData?.cover || page.thumbnailContentAndSkyDataURL || '',
+            // cover: page?.metaData?.cover || page.thumbnailDataURL || '',
+            // cover: page?.thumbnailContentAndSkyDataURL,
             title: page?.metaData?.title,
         }
         value.push(data)
@@ -85,23 +95,32 @@ const scrollToRight = async () => {
         container.scrollLeft = container.scrollWidth;
     }
 }
-updatePagesData()
+onMounted(() => {
+    updatePagesData()
+})
+const updateDataSetTimeout = () => {
+    setTimeout(() => {
+        updatePagesData()
+    }, 1000);
+}
 
+editor.eventBus.on(editor.Events.loadJSONAfter, updateDataSetTimeout)
 editor.eventBus.on(editor.Events.pageAddAfter, updatePagesData)
 editor.eventBus.on(editor.Events.pageRemoveAfter, updatePagesData)
 editor.eventBus.on(editor.Events.pageChangeAfter, updatePagesData)
-// editor.eventBus.on(editor.Events.undoRedoStackChange, updatePagesData)
-// editor.eventBus.on(editor.Events.historyStateSavedAfter, updatePagesData)
+editor.eventBus.on(editor.Events.undoRedoStackChange, updatePagesData)
+editor.eventBus.on(editor.Events.historyStateSavedAfter, updatePagesData)
 // editor.eventBus.on(editor.Events.canvasChange, updatePagesData)
 editor.eventBus.on(editor.Events.pageAddAfter, scrollToRight)
 
 
 onUnmounted(() => {
+    editor.eventBus.off(editor.Events.loadJSONAfter, updateDataSetTimeout)
     editor.eventBus.off(editor.Events.pageAddAfter, updatePagesData)
     editor.eventBus.off(editor.Events.pageRemoveAfter, updatePagesData)
     editor.eventBus.off(editor.Events.pageChangeAfter, updatePagesData)
-    // editor.eventBus.off(editor.Events.undoRedoStackChange, updatePagesData)
-    // editor.eventBus.off(editor.Events.historyStateSavedAfter, updatePagesData)
+    editor.eventBus.off(editor.Events.undoRedoStackChange, updatePagesData)
+    editor.eventBus.off(editor.Events.historyStateSavedAfter, updatePagesData)
     // editor.eventBus.off(editor.Events.canvasChange, updatePagesData)
     editor.eventBus.off(editor.Events.pageAddAfter, scrollToRight)
 });

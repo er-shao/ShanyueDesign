@@ -1,3 +1,4 @@
+import LZString from "lz-string";
 import type {
     IExportFileType,
     IExportOptions,
@@ -15,6 +16,7 @@ import { Tag } from "./interfaces";
 import { History, type HistoryType } from "./history";
 import { djb2Hash, generateID } from "./utils";
 import { base64toFile } from "../utils";
+import { cleanEmptyValues } from "./utils/cleanEmpty";
 
 // 平铺的透明方格
 const svg = Platform.toURL(
@@ -76,15 +78,24 @@ export class Canvas {
     // private _localStorageKeys: string[] = []
     private historySavedData() {
         // console.log("this.contentFrame.toJSON()", JSON.stringify(this.contentFrame.toJSON()));
-        const data = JSON.stringify(this.contentFrame.toJSON())
-        return data
-        // const key = this.name + djb2Hash(data)
+        let data = this.contentFrame.toJSON()
+        data = cleanEmptyValues(data, (k: string|number|symbol, v: any, _parent: any, _defaultFn: any)=>{
+            return _defaultFn(v)
+        })
+        let dataStr = JSON.stringify(data)
+        dataStr = LZString.compress(dataStr)
+        // const key = this.name + djb2Hash(dataStr)
+        // console.log(key);
+        return dataStr
+        
         // // 保存到本地
         // this._localStorageKeys.push(key)
         // localStorage.setItem(key, data)
         // console.log("save history", key);
 
         // return key
+
+        // IndexedDB ??
     }
 
     private shouldSave(prevState: any, newState: any) {
@@ -100,6 +111,8 @@ export class Canvas {
             if (state) { // @ts-ignore
                 // this._canUndoRedo = true
                 // state = localStorage.getItem(state)
+                state = LZString.decompress(state)
+                console.log(state.length, state);
                 this.contentFrame.set(JSON.parse(state))
                 if (this.contentFrame.width !== this._width || this.contentFrame.height !== this._height) {
                     this.resize(this.contentFrame.width || this._width, this.contentFrame.height || this._height)
@@ -147,6 +160,10 @@ export class Canvas {
             fill: "Transparent",
             hittable: false,
             draggable: false,
+            editable: false,
+            selectable: false,
+            movable: false,
+            rotatable: false,
             overflow: "show", // 内容超出显示
             blendMode: "normal",
         })
@@ -242,7 +259,7 @@ export class Canvas {
             height: this._height,
             x: this.x,
             y: this.y,
-            groundFrame: this.groundFrame.toJSON(),
+            // groundFrame: this.groundFrame.toJSON(),
             contentFrame: this.contentFrame.toJSON(),
             skyFrame: this.skyFrame.toJSON(),
             metaData: this.metaData,
@@ -276,8 +293,20 @@ export class Canvas {
         canvas.contentFrame.set(contentFrame)
         if (groundFrame)
             canvas.groundFrame.set(groundFrame)
-        if (skyFrame)
+        if (skyFrame){
             canvas.skyFrame.set(skyFrame)
+            const _setAttr = (children: IUI[]) => {
+                children.forEach(async (child) => {
+                    if (child.tag === Tag.Group) {
+                        child.hitChildren = false
+                        _setAttr(child.children || [])
+                    }
+                    child.editable = false
+                })
+            }
+            _setAttr(canvas.skyFrame.children)
+        }
+
 
         const _setAttr = (children: IUI[]) => {
             let total = 0
@@ -326,15 +355,16 @@ export class Canvas {
     }
 
     // 缩略图
-    public async thumbnail(size?: number) {
+    private _thumbnailSize = 300
+    public async thumbnail(size?: number, _options?: IExportOptions) {
         const max = this._width > this._height ? 'width' : 'height'
-        size = size || 150
-        return this.export("png", { size: { [max]: size } })
+        size = size || this._thumbnailSize
+        return this.export("jpg", { size: { [max]: size }, ..._options})
     }
-    public thumbnailSync(size?: number) {
+    public thumbnailSync(size?: number, _options?: IExportOptions) {
         const max = this._width > this._height ? 'width' : 'height'
-        size = size || 150
-        return this.exportSync("png", { size: { [max]: size } })
+        size = size ||  this._thumbnailSize
+        return this.exportSync("jpg", { size: { [max]: size }, ..._options })
     }
 
     public get thumbnailDataURL(): string | undefined {
@@ -344,6 +374,51 @@ export class Canvas {
                     // @ts-ignore
                     (Array.isArray(this.contentFrame.fill) && this.contentFrame.fill.length === 1 && this.contentFrame.fill[0]!.color === 'Transparent')))) return undefined;
         const res = this.thumbnailSync()
+        return res.data
+    }
+    
+    // 缩略图 + 内容层 + 天空层
+    public async thumbnailContentAndSky(size?: number, _options?: IExportOptions) {
+        const max = this._width > this._height ? 'width' : 'height'
+        size = size ||  this._thumbnailSize
+        const tempFrame = new Frame({
+            x:0,
+            y:0,
+            width:this._width,
+            height:this._height,
+            fill: "Transparent",
+        })
+        tempFrame.add(this.contentFrame.clone())
+        tempFrame.add(this.skyFrame.clone())
+        return tempFrame.export("jpg", { size: { [max]: size }, ..._options})
+    }
+    public thumbnailContentAndSkySync(size?: number, _options?: IExportOptions) {
+        const max = this._width > this._height ? 'width' : 'height'
+        size = size ||  this._thumbnailSize
+        const tempFrame = new Frame({
+            x:0,
+            y:0,
+            width:this._width,
+            height:this._height,
+            fill: "Transparent",
+        })
+        tempFrame.add(this.contentFrame.clone())
+        tempFrame.add(this.skyFrame.clone())
+        return tempFrame.syncExport("jpg", { size: { [max]: size }, ..._options})
+    }
+
+    public get thumbnailContentAndSkyDataURL(): string | undefined {
+        const tempFrame = new Frame({
+            x:0,
+            y:0,
+            width:this._width,
+            height:this._height,
+            fill: "Transparent",
+        })
+        tempFrame.add(this.contentFrame.clone())
+        tempFrame.add(this.skyFrame.clone())
+        const max = this._width > this._height ? 'width' : 'height'
+        const res = tempFrame.syncExport("jpg", { size: { [max]:  this._thumbnailSize } })
         return res.data
     }
 

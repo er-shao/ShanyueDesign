@@ -1,6 +1,6 @@
 <template>
     <div class="p2 layer-panel" @contextmenu.stop="(e) => e.preventDefault()">
-        <DraggableTree v-model:items="layerList" v-model:selected-keys="selectedKeys" @drag-change="onDragChange"
+        <DraggableTree style="margin-bottom: 24px;" v-model:items="layerList" v-model:selected-keys="selectedKeys" @drag-change="onDragChange"
             @drag-start="onDragStart" @drag-end="onDragEnd" @select="handleSelectionChange" @toggle="onToggle"
             @contextmenu.stop="onContextMenu">
             <template #actions="{ node }">
@@ -223,7 +223,7 @@ const thumbnailList: Record<string, string> = {
 const thumbnailSync = (ui: IUI) => {
     const max = ui.width! > ui.height! ? 'width' : 'height'
     const size = 40
-    return ui.syncExport("png", { size: { [max]: size } })
+    return ui.syncExport("jpg", { size: { [max]: size } })
 }
 
 const updateLayerList = () => {

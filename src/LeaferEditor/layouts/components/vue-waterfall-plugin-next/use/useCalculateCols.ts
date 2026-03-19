@@ -16,8 +16,10 @@ export function useCalculateCols(props: WaterfallProps) {
 
   useResizeObserver(waterfallWrapper, (entries) => {
     const entry = entries[0]
-    const { width } = entry.contentRect
-    wrapperWidth.value = width
+    if (entry) {
+      const { width } = entry.contentRect
+      wrapperWidth.value = width
+    }
   })
 
   // 列实际宽度

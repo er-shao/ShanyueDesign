@@ -29,7 +29,10 @@ export enum EventTypes {
 
     changeMode = "changeMode",
     undoRedoStackChange = "undoRedoStackChange",
-    historyStateSavedAfter = "historyStateSavedAfter"
+    historyStateSavedAfter = "historyStateSavedAfter",
+
+    loadJSONBefore = "loadJSONBefore",
+    loadJSONAfter = "loadJSONAfter"
 }
 
 export type EventsParam = {
@@ -55,6 +58,9 @@ export type EventsParam = {
     [EventTypes.changeMode]: string,
     [EventTypes.undoRedoStackChange]: void | undefined | null,
     [EventTypes.historyStateSavedAfter]: currentState,
+
+    [EventTypes.loadJSONBefore]: { json: any },
+    [EventTypes.loadJSONAfter]: { json: any }
 }
 
 export type EventType = keyof EventsParam;

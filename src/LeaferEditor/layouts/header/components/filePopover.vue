@@ -146,8 +146,8 @@ const fileOperPSD = () => {
                     editor.setNormalizeAttr(child)
                 })
                 editor.historyEnable()
-                editor.historySaveState()
                 editor.zoom('fit')
+                editor.historySaveState()
                 processTitle.value = t('header.filePopover.process.converting')
                 processInfo.text = t('header.filePopover.process.info-parsing')
                 processInfo.process = 1

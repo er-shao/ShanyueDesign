@@ -197,6 +197,7 @@ export class LeaferEditor extends PluginHost implements ILeaferEditor {
         this._pageAdd(currentPageID, this.currentCanvas)
         this.app.start()
         this.setCurrentCanvas(this.currentCanvas)
+        this.currentScale = 1
     }
 
     getInstance() {
@@ -281,34 +282,40 @@ export class LeaferEditor extends PluginHost implements ILeaferEditor {
         }
     }
     public reLoadFromJSON(json: object, isUploadBase64: boolean = false, sourceTag: string = "Base64"): boolean {
+        this.eventBus.emit(EventTypes.loadJSONBefore, {json})
         // @ts-ignore
         const { width, height, pages, currentCanvas } = JSON.parse(JSON.stringify(json))
         if (!pages) return false
-        this.clear()
+        this.historyDisable()
+        // this.clear()
         this._pages.clear()
         if (width)
             this._width = width
         if (height)
             this._height = height
+        this.currentScale = 1
 
         for (const id in pages) {
             const page = pages[id]
             const canvas = Canvas.fromJSON(
                 page,
                 this.options.historyMaxSize,
-                isUploadBase64 ? (f) => {
-                    return this.options.uploadImageCallback!(f, sourceTag)
+                isUploadBase64 ? async (f) => {
+                    const res = await this.options.uploadImageCallback!(f, sourceTag)
+                    return res
                 } : undefined
             )
             this._pageAdd(id, canvas)
             this.pageSetCurrent(id)
-            this.app.start()
         }
         if (currentCanvas)
             this.pageSetCurrent(currentCanvas)
+        this.eventBus.emit(EventTypes.loadJSONAfter, {json})
+        this.historyEnable()
         return true
     }
     public appendPagesFromJSON(json: object, isUploadBase64: boolean = false, sourceTag: string = "Base64"): boolean {
+        this.eventBus.emit(EventTypes.loadJSONBefore, {json})
         // @ts-ignore
         const { pages } = JSON.parse(JSON.stringify(json))
         if (!pages) return false
@@ -321,14 +328,15 @@ export class LeaferEditor extends PluginHost implements ILeaferEditor {
             const canvas = Canvas.fromJSON(
                 page,
                 this.options.historyMaxSize,
-                isUploadBase64 ? (f) => {
-                    return this.options.uploadImageCallback!(f, sourceTag)
+                isUploadBase64 ? async (f) => {
+                    const res = await this.options.uploadImageCallback!(f, sourceTag)
+                    return res
                 } : undefined
             )
             this._pageAdd(id, canvas)
             this.pageSetCurrent(id)
-            this.app.start()
         }
+        this.eventBus.emit(EventTypes.loadJSONAfter, {json})
         this.historyEnable()
         return true
     }
@@ -945,11 +953,11 @@ export class LeaferEditor extends PluginHost implements ILeaferEditor {
         return this.currentCanvas.exportSync(_filename, _options)
     }
     // 缩略图
-    public thumbnail(size?: number) {
-        return this.currentCanvas.thumbnail(size)
+    public thumbnail(size?: number, _options?: IExportOptions) {
+        return this.currentCanvas.thumbnail(size, _options)
     }
-    public thumbnailSync(size?: number) {
-        return this.currentCanvas.thumbnailSync(size)
+    public thumbnailSync(size?: number, _options?: IExportOptions) {
+        return this.currentCanvas.thumbnailSync(size, _options)
     }
     public get thumbnailDataURL() {
         return this.currentCanvas.thumbnailDataURL
