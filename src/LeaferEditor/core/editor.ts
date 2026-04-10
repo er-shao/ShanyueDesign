@@ -188,7 +188,6 @@ export class LeaferEditor extends PluginHost implements ILeaferEditor {
         this.ruler.changeEnabled(this.options.rulerEnabled!)
         this.changeRulerUnit(this.options.rulerUnit!)
 
-        this.app.tree.zoom('fit')
         this.registerEvents()
 
         const currentPageID = 'DefaultCanvas'
@@ -198,6 +197,9 @@ export class LeaferEditor extends PluginHost implements ILeaferEditor {
         this.app.start()
         this.setCurrentCanvas(this.currentCanvas)
         this.currentScale = 1
+        if (this.options.changePageZoomFit) {
+            this.zoom('fit')
+        }
     }
 
     getInstance() {
